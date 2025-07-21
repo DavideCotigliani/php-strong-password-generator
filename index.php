@@ -25,8 +25,11 @@ if ($password != "") {
     <h1>Genera una password sicura</h1>
     <form action="" method="GET">
             <div class="container d-flex gap-2">
-                <input type="number" min="6" max="22" name="length" placeholder="Inserisci la tua password"> Lunghezza della password
+                <input type="number" min="6" max="22" name="length" value="6" placeholder="Inserisci la tua password"> Lunghezza della password
                 <br>
+                <input type="checkbox" name="letters"> <label for="letters">Lettere</label>
+                <input type="checkbox" name="numbers">  <label for="numbers">Numeri</label>
+                <input type="checkbox" name="symbols"> <label for="symbols">Simboli</label>
                 <button type="submit">Genera</button>
             </div> 
     </form>
