@@ -3,8 +3,11 @@ require_once './functions.php';
 
 //redirect alla pagina result
 if ($password != "") {
-    $_SESSION['mypassword'] = $password;
-    header("Location: ./result.php");
+    session_start();
+    //salviamo la password in una variabile di sessione
+    $_SESSION['password'] = $password;
+    //dirottiamo l'utente alla pagina password
+    header("Location: ./password.php");
 }
 ?>
 
@@ -16,7 +19,7 @@ if ($password != "") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Generatore di password</title>
 </head>
 <body>
     <h1>Genera una password sicura</h1>

@@ -26,7 +26,5 @@ if (isset($_GET['length'])) {
 
         $password .= $randomCharacter;
     }
-    echo $password;
-
 
 }
