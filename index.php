@@ -1,6 +1,15 @@
 <?php
 require_once './functions.php';
+
+//redirect alla pagina result
+if ($password != "") {
+    $_SESSION['mypassword'] = $password;
+    header("Location: ./result.php");
+}
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,16 +22,15 @@ require_once './functions.php';
     <h1>Genera una password sicura</h1>
     <form action="" method="GET">
             <div class="container d-flex gap-2">
-                <h2>Lunghezza della password</h2>
-                <input type="number" min="6" max="22" name="password" placeholder="Inserisci la tua password">
-                <button type="submit">Invia</button>
+                <input type="number" min="6" max="22" name="length" placeholder="Inserisci la tua password"> Lunghezza della password
+                <br>
+                <button type="submit">Genera</button>
             </div> 
     </form>
     <?php
-        $password = "";
-if ($password != "") {
+if ($password != "") {      //controllo per vedere se la password c'è, se c'è quindi non è vuota mostra questo
     ?>
-    <h2>La tua password:</h2>
+    <h2>La tua password  di <?php echo $_GET['length']?>: caratteri</h2>
     <pre> <?php echo $password ?> </pre>
     <?php
 }
